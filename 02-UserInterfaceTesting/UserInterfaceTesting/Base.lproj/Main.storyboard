@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mhI-Xh-W1R">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Menu-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="UserInterfaceTesting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9V-NL-kzt">
+                                <rect key="frame" x="276" y="72" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" label="View Detail Enabled Switch"/>
+                                <connections>
+                                    <action selector="switchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UeM-T7-di6"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1r9-X3-JiK">
+                                <rect key="frame" x="201" y="143" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bpA-yb-Y8D"/>
+                                </constraints>
+                                <state key="normal" title="View Detail">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lVw-tg-1aJ" kind="show" id="Lak-bj-55d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S9V-NL-kzt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="VRU-Qh-WaB"/>
+                            <constraint firstItem="S9V-NL-kzt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X1H-cT-v7P"/>
+                            <constraint firstItem="1r9-X3-JiK" firstAttribute="top" secondItem="S9V-NL-kzt" secondAttribute="bottom" constant="40" id="h6q-qA-ZWT"/>
+                            <constraint firstItem="1r9-X3-JiK" firstAttribute="centerX" secondItem="S9V-NL-kzt" secondAttribute="centerX" id="hEz-q0-OrE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Menu" id="klo-En-Sxl"/>
+                    <connections>
+                        <outlet property="viewDetailButton" destination="1r9-X3-JiK" id="FYQ-Ks-BYG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="389"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="khy-uJ-BJ6">
+            <objects>
+                <viewController id="lVw-tg-1aJ" customClass="DetailViewController" customModule="UserInterfaceTesting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S9k-Ny-6uF"/>
+                        <viewControllerLayoutGuide type="bottom" id="fzR-4B-g3Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dCw-Ys-ZxV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTs-BR-NYi">
+                                <rect key="frame" x="200" y="72" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Mfl-wf-pao"/>
+                                </constraints>
+                                <state key="normal" title="Increment Value">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incrementTapped:" destination="lVw-tg-1aJ" eventType="touchUpInside" id="baI-ct-b2N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd9-xe-SNh">
+                                <rect key="frame" x="285" y="271" width="30" height="58"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Number Value Label" label=""/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rd9-xe-SNh" firstAttribute="centerY" secondItem="dCw-Ys-ZxV" secondAttribute="centerY" id="6zh-ol-M7R"/>
+                            <constraint firstItem="rd9-xe-SNh" firstAttribute="centerX" secondItem="dCw-Ys-ZxV" secondAttribute="centerX" id="DAe-AC-9Ee"/>
+                            <constraint firstItem="lTs-BR-NYi" firstAttribute="top" secondItem="S9k-Ny-6uF" secondAttribute="bottom" constant="8" symbolic="YES" id="bVY-BD-Ads"/>
+                            <constraint firstItem="lTs-BR-NYi" firstAttribute="centerX" secondItem="dCw-Ys-ZxV" secondAttribute="centerX" id="hRN-3a-kj7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="ApI-hn-mcJ"/>
+                    <connections>
+                        <outlet property="valueLabel" destination="rd9-xe-SNh" id="3sF-U7-OgV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ggi-6m-qzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1981" y="392"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YlR-4T-WJN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mhI-Xh-W1R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZG-60-GGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3JD-yT-BsQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYe-Dg-BmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="-303"/>
+        </scene>
+    </scenes>
+</document>
